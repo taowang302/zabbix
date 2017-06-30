@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>zabbix 安装.html</title>
+  <meta name="generator" content="Haroopad 0.13.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>div.oembedall-githubrepos{border:1px solid #DDD;border-radius:4px;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;font:13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;width:452px;background-color:#fff}div.oembedall-githubrepos .oembedall-body{background:-moz-linear-gradient(center top,#FAFAFA,#EFEFEF);background:-webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EFEFEF));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:1px solid #EEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%}div.oembedall-githubrepos h3{font-size:14px;margin:0;padding-left:18px;white-space:nowrap}div.oembedall-githubrepos p.oembedall-description{color:#444;font-size:12px;margin:0 0 3px}div.oembedall-githubrepos p.oembedall-updated-at{color:#888;font-size:11px;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats{border:none;float:right;font-size:11px;font-weight:700;padding-left:15px;position:relative;z-index:5;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats li{border:none;color:#666;display:inline-block;list-style-type:none;margin:0!important}div.oembedall-githubrepos ul.oembedall-repo-stats li a{background-color:transparent;border:none;color:#666!important;background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDD;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a{border-left:medium none;margin-right:-3px}div.oembedall-githubrepos ul.oembedall-repo-stats li a:hover{background:5px -27px no-repeat #4183C4;color:#FFF!important;text-decoration:none}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a:hover{border-bottom-left-radius:3px;border-top-left-radius:3px}ul.oembedall-repo-stats li:last-child a:hover{border-bottom-right-radius:3px;border-top-right-radius:3px}span.oembedall-closehide{background-color:#aaa;border-radius:2px;cursor:pointer;margin-right:3px}div.oembedall-container{margin-top:5px;text-align:left}.oembedall-ljuser{font-weight:700}.oembedall-ljuser img{vertical-align:bottom;border:0;padding-right:1px}.oembedall-stoqembed{border-bottom:1px dotted #999;float:left;overflow:hidden;width:730px;line-height:1;background:#FFF;color:#000;font-family:Arial,Liberation Sans,DejaVu Sans,sans-serif;font-size:80%;text-align:left;margin:0;padding:0}.oembedall-stoqembed a{color:#07C;text-decoration:none;margin:0;padding:0}.oembedall-stoqembed a:hover{text-decoration:underline}.oembedall-stoqembed a:visited{color:#4A6B82}.oembedall-stoqembed h3{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;font-size:130%;font-weight:700;margin:0;padding:0}.oembedall-stoqembed .oembedall-reputation-score{color:#444;font-size:120%;font-weight:700;margin-right:2px}.oembedall-stoqembed .oembedall-user-info{height:35px;width:185px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-gravatar32{float:left;height:32px;width:32px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-details{float:left;margin-left:5px;overflow:hidden;white-space:nowrap;width:145px}.oembedall-stoqembed .oembedall-question-hyperlink{font-weight:700}.oembedall-stoqembed .oembedall-stats{background:#EEE;margin:0 0 0 7px;padding:4px 7px 6px;width:58px}.oembedall-stoqembed .oembedall-statscontainer{float:left;margin-right:8px;width:86px}.oembedall-stoqembed .oembedall-votes{color:#555;padding:0 0 7px;text-align:center}.oembedall-stoqembed .oembedall-vote-count-post{font-size:240%;color:#808185;display:block;font-weight:700}.oembedall-stoqembed .oembedall-views{color:#999;padding-top:4px;text-align:center}.oembedall-stoqembed .oembedall-status{margin-top:-3px;padding:4px 0;text-align:center;background:#75845C;color:#FFF}.oembedall-stoqembed .oembedall-status strong{color:#FFF;display:block;font-size:140%}.oembedall-stoqembed .oembedall-summary{float:left;width:635px}.oembedall-stoqembed .oembedall-excerpt{line-height:1.2;margin:0;padding:0 0 5px}.oembedall-stoqembed .oembedall-tags{float:left;line-height:18px}.oembedall-stoqembed .oembedall-tags a:hover{text-decoration:none}.oembedall-stoqembed .oembedall-post-tag{background-color:#E0EAF1;border-bottom:1px solid #3E6D8E;border-right:1px solid #7F9FB6;color:#3E6D8E;font-size:90%;line-height:2.4;margin:2px 2px 2px 0;padding:3px 4px;text-decoration:none;white-space:nowrap}.oembedall-stoqembed .oembedall-post-tag:hover{background-color:#3E6D8E;border-bottom:1px solid #37607D;border-right:1px solid #37607D;color:#E0EAF1}.oembedall-stoqembed .oembedall-fr{float:right}.oembedall-stoqembed .oembedall-statsarrow{background-image:url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3);background-repeat:no-repeat;overflow:hidden;background-position:0 -435px;float:right;height:13px;margin-top:12px;width:7px}.oembedall-facebook1{border:1px solid #1A3C6C;padding:0;font:13.34px/1.4 verdana;width:500px}.oembedall-facebook2{background-color:#627add}.oembedall-facebook2 a{color:#e8e8e8;text-decoration:none}.oembedall-facebookBody{background-color:#fff;vertical-align:top;padding:5px}.oembedall-facebookBody .contents{display:inline-block;width:100%}.oembedall-facebookBody div img{float:left;margin-right:5px}div.oembedall-lanyard{-webkit-box-shadow:none;-webkit-transition-delay:0s;-webkit-transition-duration:.4000000059604645s;-webkit-transition-property:width;-webkit-transition-timing-function:cubic-bezier(0.42,0,.58,1);background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;border-width:0;box-shadow:none;color:#112644;display:block;float:left;font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:16px;height:253px;line-height:19px;margin:0;max-width:none;min-height:0;outline:#112644 0;overflow-x:visible;overflow-y:visible;padding:0;position:relative;text-align:left;vertical-align:baseline;width:804px}div.oembedall-lanyard .tagline{font-size:1.5em}div.oembedall-lanyard .wrapper{overflow:hidden;clear:both}div.oembedall-lanyard .split{float:left;display:inline}div.oembedall-lanyard .prominent-place .flag:active,div.oembedall-lanyard .prominent-place .flag:focus,div.oembedall-lanyard .prominent-place .flag:hover,div.oembedall-lanyard .prominent-place .flag:link,div.oembedall-lanyard .prominent-place .flag:visited{float:left;display:block;width:48px;height:48px;position:relative;top:-5px;margin-right:10px}div.oembedall-lanyard .place-context{font-size:.889em}div.oembedall-lanyard .prominent-place .sub-place{display:block}div.oembedall-lanyard .prominent-place{font-size:1.125em;line-height:1.1em;font-weight:400}div.oembedall-lanyard .main-date{color:#8CB4E0;font-weight:700;line-height:1.1}div.oembedall-lanyard .first{width:48.57%;margin:0 0 0 2.857%}.mermaid .label{color:#333}.node circle,.node polygon,.node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}.edgePath .path{stroke:green;stroke-width:1.5px}.cluster rect{fill:#cdffb2;rx:40;stroke:#6eaa49;stroke-width:1px}.cluster text{fill:#333}.actor{stroke:#13540c;fill:#cde498}text.actor{fill:#000;stroke:none}.actor-line{stroke:grey}.messageLine0{stroke-width:1.5;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#333}.messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#arrowhead{fill:#333}#crosshead path{fill:#333!important;stroke:#333!important}.messageText{fill:#333;stroke:none}.labelBox{stroke:#326932;fill:#cde498}.labelText,.loopText{fill:#000;stroke:none}.loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}.note{stroke:#6eaa49;fill:#fff5ad}.noteText{fill:#000;stroke:none;font-family:'trebuchet ms',verdana,arial;font-size:14px}.section{stroke:none;opacity:.2}.section0,.section2{fill:#6eaa49}.section1,.section3{fill:#fff;opacity:.2}.sectionTitle0,.sectionTitle1,.sectionTitle2,.sectionTitle3{fill:#333}.sectionTitle{text-anchor:start;font-size:11px;text-height:14px}.grid .tick{stroke:lightgrey;opacity:.3;shape-rendering:crispEdges}.grid path{stroke-width:0}.today{fill:none;stroke:red;stroke-width:2px}.task{stroke-width:2}.taskText{text-anchor:middle;font-size:11px}.taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}.taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}.taskText0,.taskText1,.taskText2,.taskText3{fill:#fff}.task0,.task1,.task2,.task3{fill:#487e3a;stroke:#13540c}.taskTextOutside0,.taskTextOutside1,.taskTextOutside2,.taskTextOutside3{fill:#000}.active0,.active1,.active2,.active3{fill:#cde498;stroke:#13540c}.activeText0,.activeText1,.activeText2,.activeText3{fill:#000!important}.done0,.done1,.done2,.done3{stroke:grey;fill:lightgrey;stroke-width:2}.doneText0,.doneText1,.doneText2,.doneText3{fill:#000!important}.crit0,.crit1,.crit2,.crit3{stroke:#f88;fill:red;stroke-width:2}.activeCrit0,.activeCrit1,.activeCrit2,.activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}.doneCrit0,.doneCrit1,.doneCrit2,.doneCrit3{stroke:#f88;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}.activeCritText0,.activeCritText1,.activeCritText2,.activeCritText3,.doneCritText0,.doneCritText1,.doneCritText2,.doneCritText3{fill:#000!important}.titleText{text-anchor:middle;font-size:18px;fill:#000}text{font-family:'trebuchet ms',verdana,arial;font-size:14px}html{height:100%}body{margin:0!important;padding:5px 20px 26px!important;background-color:#fff;font-family:"Lucida Grande","Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Lucida Sans Unicode",Helvetica,Arial,sans-serif;font-size:.9em;overflow-x:hidden;overflow-y:auto}br,h1,h2,h3,h4,h5,h6{clear:both}hr.page{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;height:3px;padding:0}hr.underscore{border-top-style:dashed!important}body >:first-child{margin-top:0!important}img.plugin{box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:3px}iframe{border:0}figure{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}kbd{border:1px solid #aaa;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-shadow:1px 2px 2px #ddd;-webkit-box-shadow:1px 2px 2px #ddd;box-shadow:1px 2px 2px #ddd;background-color:#f9f9f9;background-image:-moz-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-o-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-webkit-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:linear-gradient(top,#eee,#f9f9f9,#eee);padding:1px 3px;font-family:inherit;font-size:.85em}.oembeded .oembed_photo{display:inline-block}img[data-echo]{margin:25px 0;width:100px;height:100px;background:url(../img/ajax.gif) center center no-repeat #fff}.spinner{display:inline-block;width:10px;height:10px;margin-bottom:-.1em;border:2px solid rgba(0,0,0,.5);border-top-color:transparent;border-radius:100%;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.spinner:after{content:'';display:block;width:0;height:0;position:absolute;top:-6px;left:0;border:4px solid transparent;border-bottom-color:rgba(0,0,0,.5);-webkit-transform:rotate(45deg);transform:rotate(45deg)}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}p.toc{margin:0!important}p.toc ul{padding-left:10px}p.toc>ul{padding:10px;margin:0 10px;display:inline-block;border:1px solid #ededed;border-radius:5px}p.toc li,p.toc ul{list-style-type:none}p.toc li{width:100%;padding:0;overflow:hidden}p.toc li a::after{content:"."}p.toc li a:before{content:"• "}p.toc h5{text-transform:uppercase}p.toc .title{float:left;padding-right:3px}p.toc .number{margin:0;float:right;padding-left:3px;background:#fff;display:none}input.task-list-item{margin-left:-1.62em}.markdown{font-family:"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;padding:20px}.markdown a{text-decoration:none;vertical-align:baseline}.markdown a:hover{text-decoration:underline}.markdown h1{font-size:2.2em;font-weight:700;margin:1.5em 0 1em}.markdown h2{font-size:1.8em;font-weight:700;margin:1.275em 0 .85em}.markdown h3{font-size:1.6em;font-weight:700;margin:1.125em 0 .75em}.markdown h4{font-size:1.4em;font-weight:700;margin:.99em 0 .66em}.markdown h5{font-size:1.2em;font-weight:700;margin:.855em 0 .57em}.markdown h6{font-size:1em;font-weight:700;margin:.75em 0 .5em}.markdown h1+p,.markdown h1:first-child,.markdown h2+p,.markdown h2:first-child,.markdown h3+p,.markdown h3:first-child,.markdown h4+p,.markdown h4:first-child,.markdown h5+p,.markdown h5:first-child,.markdown h6+p,.markdown h6:first-child{margin-top:0}.markdown hr{border:1px solid #ccc}.markdown p{margin:1em 0;word-wrap:break-word}.markdown ol{list-style-type:decimal}.markdown li{display:list-item;line-height:1.4em}.markdown blockquote{margin:1em 20px}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown blockquote cite:before{content:'\2014 \00A0'}.markdown .code{border-radius:3px;word-wrap:break-word}.markdown pre{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;overflow:auto;padding:.5em}.markdown pre code{border:0;display:block}.markdown pre>code{font-family:Consolas,Inconsolata,Courier,monospace;font-weight:700;white-space:pre;margin:0}.markdown code{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;padding:0 5px;margin:0 2px}.markdown img{max-width:100%}.markdown mark{color:#000;background-color:#fcf8e3}.markdown table{padding:0;border-collapse:collapse;border-spacing:0;margin-bottom:16px}.markdown table tr td,.markdown table tr th{border:1px solid #ccc;margin:0;padding:6px 13px}.markdown table tr th{font-weight:700}.markdown table tr th>:first-child{margin-top:0}.markdown table tr th>:last-child{margin-bottom:0}.markdown table tr td>:first-child{margin-top:0}.markdown table tr td>:last-child{margin-bottom:0}.node-dark{padding:20px;color:#d2d8ba;font-size:15px;background:#33342d;-webkit-font-smoothing:antialiased}.node-dark a{color:#639400}.node-dark a:hover{color:#85c700}.node-dark h1,.node-dark h2,.node-dark h3,.node-dark h4,.node-dark h5{color:#eee}.node-dark h2{border-bottom:1px solid #4e4f45;line-height:1.7em}.node-dark h6{color:#694f00}.node-dark hr{border:1px solid #2b2c26}.node-dark pre>code{font-size:1em}.node-dark blockquote{border-left:4px solid #181915;padding:0 15px;font-style:italic}.node-dark table{background-color:#3d3e36}.node-dark table tr td,.node-dark table tr th{border:1px solid #5f6154}.node-dark table tr:nth-child(2n){background-color:#46483e}.hljs{display:block;overflow-x:auto;padding:.5em;background:#fdf6e3;color:#657b83;-webkit-text-size-adjust:none}.diff .hljs-header,.hljs-comment,.hljs-doctype,.hljs-javadoc,.hljs-pi,.lisp .hljs-string{color:#93a1a1}.css .hljs-tag,.hljs-addition,.hljs-keyword,.hljs-request,.hljs-status,.hljs-winutils,.method,.nginx .hljs-title{color:#859900}.hljs-command,.hljs-dartdoc,.hljs-hexcolor,.hljs-link_url,.hljs-number,.hljs-phpdoc,.hljs-regexp,.hljs-rules .hljs-value,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#2aa198}.css .hljs-function,.hljs-built_in,.hljs-chunk,.hljs-decorator,.hljs-id,.hljs-identifier,.hljs-localvars,.hljs-title,.vhdl .hljs-literal{color:#268bd2}.hljs-attribute,.hljs-class .hljs-title,.hljs-constant,.hljs-link_reference,.hljs-parent,.hljs-type,.hljs-variable,.lisp .hljs-body,.smalltalk .hljs-number{color:#b58900}.css .hljs-pseudo,.diff .hljs-change,.hljs-attr_selector,.hljs-cdata,.hljs-header,.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-shebang,.hljs-special,.hljs-subst,.hljs-symbol,.hljs-symbol .hljs-string{color:#cb4b16}.hljs-deletion,.hljs-important{color:#dc322f}.hljs-link_label{color:#6c71c4}.tex .hljs-formula{background:#eee8d5}.MathJax_Hover_Frame{border-radius:.25em;-webkit-border-radius:.25em;-moz-border-radius:.25em;-khtml-border-radius:.25em;box-shadow:0 0 15px #83A;-webkit-box-shadow:0 0 15px #83A;-moz-box-shadow:0 0 15px #83A;-khtml-box-shadow:0 0 15px #83A;border:1px solid #A6D!important;display:inline-block;position:absolute}.MathJax_Hover_Arrow{position:absolute;width:15px;height:11px;cursor:pointer}#MathJax_About{position:fixed;left:50%;width:auto;text-align:center;border:3px outset;padding:1em 2em;background-color:#DDD;color:#000;cursor:default;font-family:message-box;font-size:120%;font-style:normal;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;-khtml-border-radius:15px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_Menu{position:absolute;background-color:#fff;color:#000;width:auto;padding:5px 0;border:1px solid #CCC;margin:0;cursor:default;font:menu;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_MenuItem{padding:1px 2em;background:0 0}.MathJax_MenuArrow{position:absolute;right:.5em;color:#666}.MathJax_MenuActive .MathJax_MenuArrow{color:#fff}.MathJax_MenuArrow.RTL{left:.5em;right:auto}.MathJax_MenuCheck{position:absolute;left:.7em}.MathJax_MenuCheck.RTL{right:.7em;left:auto}.MathJax_MenuRadioCheck{position:absolute;left:.7em}.MathJax_MenuRadioCheck.RTL{right:.7em;left:auto}.MathJax_MenuLabel{padding:1px 2em 3px 1.33em;font-style:italic}.MathJax_MenuRule{border-top:1px solid #DDD;margin:4px 3px}.MathJax_MenuDisabled{color:GrayText}.MathJax_MenuActive{background-color:#606872;color:#fff}.MathJax_Menu_Close{position:absolute;width:31px;height:31px;top:-15px;left:-15px}#MathJax_Zoom{position:absolute;background-color:#F0F0F0;overflow:auto;display:block;z-index:301;padding:.5em;border:1px solid #000;margin:0;font-weight:400;font-style:normal;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;box-shadow:5px 5px 15px #AAA;-webkit-box-shadow:5px 5px 15px #AAA;-moz-box-shadow:5px 5px 15px #AAA;-khtml-box-shadow:5px 5px 15px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}#MathJax_ZoomOverlay{position:absolute;left:0;top:0;z-index:300;display:inline-block;width:100%;height:100%;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_ZoomFrame{position:relative;display:inline-block;height:0;width:0}#MathJax_ZoomEventTrap{position:absolute;left:0;top:0;z-index:302;display:inline-block;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}.MathJax_Preview{color:#888}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0;padding:2px 8px;z-index:102;color:#000;font-size:80%;width:auto;white-space:nowrap}#MathJax_MSIE_Frame{position:absolute;top:0;left:0;width:0;z-index:101;border:0;margin:0;padding:0}.MathJax_Error{color:#C00;font-style:italic}footer{position:fixed;font-size:.8em;text-align:right;bottom:0;margin-left:-25px;height:20px;width:100%}</style>
+</head>
+<body class="markdown node-dark">
+<p class="toc" style="undefined"></p><ul>
+<li><ul>
+<li><span class="title">
+<a href="#环境准备" title="环境准备">环境准备</a>
+</span>
+<!--span class="number">
+0
+</span-->
+</li>
+<li><span class="title">
+<a href="#系统约定" title="系统约定">系统约定</a>
+</span>
+<!--span class="number">
+1
+</span-->
+</li>
+<li><span class="title">
+<a href="#依赖包安装" title="依赖包安装">依赖包安装</a>
+</span>
+<!--span class="number">
+2
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装mysql" title="安装Mysql">安装Mysql</a>
+</span>
+<!--span class="number">
+3
+</span-->
+<ul>
+<li><span class="title">
+<a href="#安装cmake" title="安装cmake">安装cmake</a>
+</span>
+<!--span class="number">
+4
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装mysql-1" title="安装mysql">安装mysql</a>
+</span>
+<!--span class="number">
+5
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#安装nginx" title="安装Nginx">安装Nginx</a>
+</span>
+<!--span class="number">
+6
+</span-->
+<ul>
+<li><span class="title">
+<a href="#安装pcre" title="安装pcre">安装pcre</a>
+</span>
+<!--span class="number">
+7
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装openssl" title="安装openssl">安装openssl</a>
+</span>
+<!--span class="number">
+8
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装zlib" title="安装zlib">安装zlib</a>
+</span>
+<!--span class="number">
+9
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装nginx-1" title="安装Nginx">安装Nginx</a>
+</span>
+<!--span class="number">
+10
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#安装php" title="安装PHP">安装PHP</a>
+</span>
+<!--span class="number">
+11
+</span-->
+<ul>
+<li><span class="title">
+<a href="#安装yasm" title="安装yasm">安装yasm</a>
+</span>
+<!--span class="number">
+12
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装libmcrypt" title="安装libmcrypt">安装libmcrypt</a>
+</span>
+<!--span class="number">
+13
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装libvpx" title="安装libvpx">安装libvpx</a>
+</span>
+<!--span class="number">
+14
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装tiff" title="安装tiff">安装tiff</a>
+</span>
+<!--span class="number">
+15
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装libpng" title="安装libpng">安装libpng</a>
+</span>
+<!--span class="number">
+16
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装freetype" title="安装freetype">安装freetype</a>
+</span>
+<!--span class="number">
+17
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装jpeg" title="安装jpeg">安装jpeg</a>
+</span>
+<!--span class="number">
+18
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装libgd" title="安装libgd">安装libgd</a>
+</span>
+<!--span class="number">
+19
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装t1lib" title="安装t1lib">安装t1lib</a>
+</span>
+<!--span class="number">
+20
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装php-1" title="安装php">安装php</a>
+</span>
+<!--span class="number">
+21
+</span-->
+</li>
+<li><span class="title">
+<a href="#修改nginx配置文件以支持php" title="修改Nginx配置文件以支持PHP">修改Nginx配置文件以支持PHP</a>
+</span>
+<!--span class="number">
+22
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#zabbix-安装" title="ZABBIX 安装">ZABBIX 安装</a>
+</span>
+<!--span class="number">
+23
+</span-->
+<ul>
+<li><span class="title">
+<a href="#软件包准备" title="软件包准备">软件包准备</a>
+</span>
+<!--span class="number">
+24
+</span-->
+</li>
+<li><span class="title">
+<a href="#初始化mysql数据库" title="初始化mysql数据库">初始化mysql数据库</a>
+</span>
+<!--span class="number">
+25
+</span-->
+</li>
+<li><span class="title">
+<a href="#zabbix-安装-1" title="zabbix 安装">zabbix 安装</a>
+</span>
+<!--span class="number">
+26
+</span-->
+<ul>
+<li><span class="title">
+<a href="#编辑/etc/services" title="编辑/etc/services">编辑/etc/services</a>
+</span>
+<!--span class="number">
+27
+</span-->
+</li>
+<li><span class="title">
+<a href="#修改zabbix配置文件" title="修改zabbix配置文件">修改zabbix配置文件</a>
+</span>
+<!--span class="number">
+28
+</span-->
+</li>
+<li><span class="title">
+<a href="#添加开机自启动" title="添加开机自启动">添加开机自启动</a>
+</span>
+<!--span class="number">
+29
+</span-->
+</li>
+<li><span class="title">
+<a href="#配置web站点" title="配置web站点">配置web站点</a>
+</span>
+<!--span class="number">
+30
+</span-->
+</li>
+<li><span class="title">
+<a href="#php参数调优" title="php参数调优">php参数调优</a>
+</span>
+<!--span class="number">
+31
+</span-->
+</li>
+<li><span class="title">
+<a href="#安装web" title="安装web">安装web</a>
+</span>
+<!--span class="number">
+32
+</span-->
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+</ul>
+<p></p><hr class="page"><h1 id="zabbix-安装"><a name="zabbix-安装" href="#zabbix-安装"></a>ZABBIX 安装</h1><h2 id="环境准备"><a name="环境准备" href="#环境准备"></a>环境准备</h2><pre><code data-origin="<pre><code>Linux: CentOS Linux release 7.3.1611 (Core) 
+zabbix: 3.2.6
+nginx: 1.12.0
+php: 5.5.14
+mysql: 5.6.19
+</code></pre>">Linux: CentOS Linux release 7.3.1611 (Core) 
+zabbix: 3.2.6
+nginx: 1.12.0
+php: 5.5.14
+mysql: 5.6.19
+</code></pre><h2 id="系统约定"><a name="系统约定" href="#系统约定"></a>系统约定</h2><pre><code data-origin="<pre><code>软件源代码包存放位置：/usr/local/src
+源码包编译安装位置：/usr/local/软件名字
+</code></pre>">软件源代码包存放位置：/usr/local/src
+源码包编译安装位置：/usr/local/软件名字
+</code></pre><h2 id="依赖包安装"><a name="依赖包安装" href="#依赖包安装"></a>依赖包安装</h2><pre><code data-origin="<pre><code># yum install -y apr* autoconf automake bison bzip2 bzip2* cloog-ppl compat* cpp curl curl-devel fontconfig fontconfig-devel freetype freetype* freetype-devel gcc gcc-c++ gtk+-devel gd gettext gettext-devel glibc kernel kernel-headers keyutils keyutils-libs-devel krb5-devel libcom_err-devel libpng libpng-devel libjpeg* libsepol-devel libselinux-devel libstdc++-devel libtool* libgomp libxml2 libxml2-devel libXpm* libxml* libtiff libtiff* make mpfr ncurses* ntp openssl openssl-devel patch pcre-devel perl php-common php-gd policycoreutils telnet t1lib t1lib* nasm nasm* wget zlib-devel vim
+</code></pre>"># yum install -y apr* autoconf automake bison bzip2 bzip2* cloog-ppl compat* cpp curl curl-devel fontconfig fontconfig-devel freetype freetype* freetype-devel gcc gcc-c++ gtk+-devel gd gettext gettext-devel glibc kernel kernel-headers keyutils keyutils-libs-devel krb5-devel libcom_err-devel libpng libpng-devel libjpeg* libsepol-devel libselinux-devel libstdc++-devel libtool* libgomp libxml2 libxml2-devel libXpm* libxml* libtiff libtiff* make mpfr ncurses* ntp openssl openssl-devel patch pcre-devel perl php-common php-gd policycoreutils telnet t1lib t1lib* nasm nasm* wget zlib-devel vim
+</code></pre><h2 id="安装mysql"><a name="安装mysql" href="#安装mysql"></a>安装Mysql</h2><h3 id="安装cmake"><a name="安装cmake" href="#安装cmake"></a>安装cmake</h3><pre><code data-origin="<pre><code># cd /usr/local/src
+# wget http://www.cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz
+# tar zxvf cmake-2.8.11.2.tar.gz
+# cd cmake-2.8.11.2
+# ./configure
+# make
+# make install
+</code></pre>"># cd /usr/local/src
+# wget http://www.cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz
+# tar zxvf cmake-2.8.11.2.tar.gz
+# cd cmake-2.8.11.2
+# ./configure
+# make
+# make install
+</code></pre><h3 id="安装mysql"><a name="安装mysql" href="#安装mysql"></a>安装mysql</h3><pre><code data-origin="<pre><code>添加mysql组
+# groupadd mysql
+创建用户mysql并加入到mysql组，不允许mysql用户直接登录系统
+# useradd -g mysql mysql -s /bin/false
+创建MySQL数据库存放目录
+# mkdir -p /data/mysql
+设置MySQL数据库存放目录权限
+# chown -R mysql:mysql /data/mysql
+创建MySQL安装目录
+# mkdir -p /usr/local/mysql
+# cd /usr/local/src
+# tar zxvf mysql-5.6.19.tar.gz
+# cd mysql-5.6.19
+配置
+# cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/data/mysql -DSYSCONFDIR=/etc
+# make
+# make install
+删除系统默认的配置文件（如果默认没有就不用删除）
+# rm -f /etc/my.cnf
+# ln -s /usr/local/mysql/my.cnf /etc/my.cnf
+添加开机自启动
+# cp ./support-files/mysql.server /etc/rc.d/init.d/mysqld
+# chmod 755 /etc/init.d/mysqld
+# chkconfig mysqld on
+编辑如下文件并保存退出
+# vim /etc/rc.d/init.d/mysqld
+basedir=/usr/local/mysql #MySQL程序安装路径
+datadir=/data/mysql #MySQl数据库存放目录
+编辑profile文件，在最后一行追加
+# vim /etc/profile
+export PATH=$PATH:/usr/local/mysql/bin
+# source /etc/profile
+# ln -s /usr/local/mysql/lib/mysql /usr/lib/mysql
+# ln -s /usr/local/mysql/include/mysql /usr/include/mysql
+ # mkdir -p /var/lib/mysq
+# ln -s /tmp/mysql.sock /var/lib/mysql/mysql.sock
+设置root密码
+#mysql -u root
+&amp;gt; grant all privileges on *.* to 'root'@'localhost' identified by '123456';
+&amp;gt; grant all privileges on *.* to 'root'@'192.168.10.171' identified by '123456';
+</code></pre>">添加mysql组
+# groupadd mysql
+创建用户mysql并加入到mysql组，不允许mysql用户直接登录系统
+# useradd -g mysql mysql -s /bin/false
+创建MySQL数据库存放目录
+# mkdir -p /data/mysql
+设置MySQL数据库存放目录权限
+# chown -R mysql:mysql /data/mysql
+创建MySQL安装目录
+# mkdir -p /usr/local/mysql
+# cd /usr/local/src
+# tar zxvf mysql-5.6.19.tar.gz
+# cd mysql-5.6.19
+配置
+# cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/data/mysql -DSYSCONFDIR=/etc
+# make
+# make install
+删除系统默认的配置文件（如果默认没有就不用删除）
+# rm -f /etc/my.cnf
+# ln -s /usr/local/mysql/my.cnf /etc/my.cnf
+添加开机自启动
+# cp ./support-files/mysql.server /etc/rc.d/init.d/mysqld
+# chmod 755 /etc/init.d/mysqld
+# chkconfig mysqld on
+编辑如下文件并保存退出
+# vim /etc/rc.d/init.d/mysqld
+basedir=/usr/local/mysql #MySQL程序安装路径
+datadir=/data/mysql #MySQl数据库存放目录
+编辑profile文件，在最后一行追加
+# vim /etc/profile
+export PATH=$PATH:/usr/local/mysql/bin
+# source /etc/profile
+# ln -s /usr/local/mysql/lib/mysql /usr/lib/mysql
+# ln -s /usr/local/mysql/include/mysql /usr/include/mysql
+ # mkdir -p /var/lib/mysq
+# ln -s /tmp/mysql.sock /var/lib/mysql/mysql.sock
+设置root密码
+#mysql -u root
+&gt; grant all privileges on *.* to 'root'@'localhost' identified by '123456';
+&gt; grant all privileges on *.* to 'root'@'192.168.10.171' identified by '123456';
+</code></pre><h2 id="安装nginx"><a name="安装nginx" href="#安装nginx"></a>安装Nginx</h2><h3 id="安装pcre"><a name="安装pcre" href="#安装pcre"></a>安装pcre</h3><pre><code data-origin="<pre><code># wget 
+# mkdir /usr/local/pcre
+# tar zxvf pcre-8.35.tar.gz
+# cd pcre-8.35
+# ./configure --prefix=/usr/local/pcre
+# make
+# make install
+</code></pre>"># wget 
+# mkdir /usr/local/pcre
+# tar zxvf pcre-8.35.tar.gz
+# cd pcre-8.35
+# ./configure --prefix=/usr/local/pcre
+# make
+# make install
+</code></pre><h3 id="安装openssl"><a name="安装openssl" href="#安装openssl"></a>安装openssl</h3><pre><code data-origin="<pre><code># wget 
+# mkdir /usr/local/openssl
+# tar zxvf openssl-1.0.1h.tar.gz
+# cd openssl-1.0.1h
+# ./config --prefix=/usr/local/openssl
+# make
+# make install
+编辑profile文件，最后一行追加
+# vim /etc/profile
+  export PATH=$PATH:/usr/local/openssl/bin
+# source /etc/profile
+</code></pre>"># wget 
+# mkdir /usr/local/openssl
+# tar zxvf openssl-1.0.1h.tar.gz
+# cd openssl-1.0.1h
+# ./config --prefix=/usr/local/openssl
+# make
+# make install
+编辑profile文件，最后一行追加
+# vim /etc/profile
+  export PATH=$PATH:/usr/local/openssl/bin
+# source /etc/profile
+</code></pre><h3 id="安装zlib"><a name="安装zlib" href="#安装zlib"></a>安装zlib</h3><pre><code data-origin="<pre><code>wget
+# mkdir /usr/local/zlib
+# tar zvxf zlib-1.2.8.tar.gz
+# cd zlib-1.2.8
+# ./configure --prefix=/usr/local/zlib
+# make
+# make install
+</code></pre>">wget
+# mkdir /usr/local/zlib
+# tar zvxf zlib-1.2.8.tar.gz
+# cd zlib-1.2.8
+# ./configure --prefix=/usr/local/zlib
+# make
+# make install
+</code></pre><h3 id="安装nginx"><a name="安装nginx" href="#安装nginx"></a>安装Nginx</h3><pre><code data-origin="<pre><code># wget http://nginx.org/download/nginx-1.12.0.tar.gz
+# tar zvxf  nginx-1.12.0.tar.gz
+# groupadd www
+# useradd -g www www -s /bin/false
+# cd nginx-1.12.0
+# ./configure --prefix=/usr/local/nginx --without-http_memcached_module --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-openssl=/usr/local/src/openssl-1.0.1h --with-zlib=/usr/local/src/zlib-1.2.8 --with-pcre=/usr/local/src/pcre-8.35
+# make
+# make install
+</code></pre>"># wget http://nginx.org/download/nginx-1.12.0.tar.gz
+# tar zvxf  nginx-1.12.0.tar.gz
+# groupadd www
+# useradd -g www www -s /bin/false
+# cd nginx-1.12.0
+# ./configure --prefix=/usr/local/nginx --without-http_memcached_module --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-openssl=/usr/local/src/openssl-1.0.1h --with-zlib=/usr/local/src/zlib-1.2.8 --with-pcre=/usr/local/src/pcre-8.35
+# make
+# make install
+</code></pre><h2 id="安装php"><a name="安装php" href="#安装php"></a>安装PHP</h2><h3 id="安装yasm"><a name="安装yasm" href="#安装yasm"></a>安装yasm</h3><pre><code data-origin="<pre><code># wget 
+# tar zxvf yasm-1.2.0.tar.gz
+# cd yasm-1.2.0
+# ./configure
+# make 
+# make install
+</code></pre>"># wget 
+# tar zxvf yasm-1.2.0.tar.gz
+# cd yasm-1.2.0
+# ./configure
+# make 
+# make install
+</code></pre><h3 id="安装libmcrypt"><a name="安装libmcrypt" href="#安装libmcrypt"></a>安装libmcrypt</h3><pre><code data-origin="<pre><code># wget 
+# tar zxvf libmcrypt-2.5.8.tar.gz
+# cd libmcrypt-2.5.8
+# ./configure
+# make
+# make install
+</code></pre>"># wget 
+# tar zxvf libmcrypt-2.5.8.tar.gz
+# cd libmcrypt-2.5.8
+# ./configure
+# make
+# make install
+</code></pre><h3 id="安装libvpx"><a name="安装libvpx" href="#安装libvpx"></a>安装libvpx</h3><pre><code data-origin="<pre><code># wget 
+# tar xvf libvpx-v1.3.0.tar.bz2
+# cd libvpx-v1.3.0
+# ./configure --prefix=/usr/local/libvpx --enable-shared --enable-vp9
+# make
+# make install
+</code></pre>"># wget 
+# tar xvf libvpx-v1.3.0.tar.bz2
+# cd libvpx-v1.3.0
+# ./configure --prefix=/usr/local/libvpx --enable-shared --enable-vp9
+# make
+# make install
+</code></pre><h3 id="安装tiff"><a name="安装tiff" href="#安装tiff"></a>安装tiff</h3><pre><code data-origin="<pre><code># wget
+# tar  zxvf tiff-4.0.3.tar.gz
+# cd tiff-4.0.3
+# ./configure --prefix=/usr/local/tiff --enable-shared
+# make
+# make install
+</code></pre>"># wget
+# tar  zxvf tiff-4.0.3.tar.gz
+# cd tiff-4.0.3
+# ./configure --prefix=/usr/local/tiff --enable-shared
+# make
+# make install
+</code></pre><h3 id="安装libpng"><a name="安装libpng" href="#安装libpng"></a>安装libpng</h3><pre><code data-origin="<pre><code># wget 
+# tar zxvf libpng-1.6.12.tar.gz
+# cd libpng-1.6.12
+# ./configure --prefix=/usr/local/libpng --enable-shared
+# make
+# make install
+</code></pre>"># wget 
+# tar zxvf libpng-1.6.12.tar.gz
+# cd libpng-1.6.12
+# ./configure --prefix=/usr/local/libpng --enable-shared
+# make
+# make install
+</code></pre><h3 id="安装freetype"><a name="安装freetype" href="#安装freetype"></a>安装freetype</h3><pre><code data-origin="<pre><code># wget
+# zxvf freetype-2.5.3.tar.gz
+# cd freetype-2.5.3
+# ./configure --prefix=/usr/local/freetype --enable-shared
+# make
+# make install
+</code></pre>"># wget
+# zxvf freetype-2.5.3.tar.gz
+# cd freetype-2.5.3
+# ./configure --prefix=/usr/local/freetype --enable-shared
+# make
+# make install
+</code></pre><h3 id="安装jpeg"><a name="安装jpeg" href="#安装jpeg"></a>安装jpeg</h3><pre><code data-origin="<pre><code># wget
+# tar zxvf jpegsrc.v9a.tar.gz
+# cd jpeg-9a
+# ./configure --prefix=/usr/local/jpeg --enable-shared
+# make
+# make install
+</code></pre>"># wget
+# tar zxvf jpegsrc.v9a.tar.gz
+# cd jpeg-9a
+# ./configure --prefix=/usr/local/jpeg --enable-shared
+# make
+# make install
+</code></pre><h3 id="安装libgd"><a name="安装libgd" href="#安装libgd"></a>安装libgd</h3><pre><code data-origin="<pre><code># wget
+# tar zxvf libgd-2.1.0.tar.gz
+# cd libgd-2.1.0
+# ./configure --prefix=/usr/local/libgd --enable-shared --with-jpeg=/usr/local/jpeg --with-png=/usr/local/libpng --with-freetype=/usr/local/freetype --with-fontconfig=/usr/local/freetype --with-xpm=/usr/ --with-tiff=/usr/local/tiff --with-vpx=/usr/local/libvpx
+# make
+# make install
+</code></pre>"># wget
+# tar zxvf libgd-2.1.0.tar.gz
+# cd libgd-2.1.0
+# ./configure --prefix=/usr/local/libgd --enable-shared --with-jpeg=/usr/local/jpeg --with-png=/usr/local/libpng --with-freetype=/usr/local/freetype --with-fontconfig=/usr/local/freetype --with-xpm=/usr/ --with-tiff=/usr/local/tiff --with-vpx=/usr/local/libvpx
+# make
+# make install
+</code></pre><h3 id="安装t1lib"><a name="安装t1lib" href="#安装t1lib"></a>安装t1lib</h3><pre><code data-origin="<pre><code># wget
+# tar zxvf t1lib-5.1.2.tar.gz
+# cd t1lib-5.1.2
+# ./configure --prefix=/usr/local/t1lib --enable-shared
+# make without_doc
+# make install
+</code></pre>"># wget
+# tar zxvf t1lib-5.1.2.tar.gz
+# cd t1lib-5.1.2
+# ./configure --prefix=/usr/local/t1lib --enable-shared
+# make without_doc
+# make install
+</code></pre><h3 id="安装php"><a name="安装php" href="#安装php"></a>安装php</h3><pre><code data-origin="<pre><code># cp -frp /usr/lib64/libXpm.so* /usr/lib/
+# wget
+# tar -zvxf php-5.5.14.tar.gz
+# php-5.5.14
+# export LD_LIBRARY_PATH=/usr/local/libgd/lib
+# ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-mysql-sock=/tmp/mysql.sock --with-pdo-mysql=/usr/local/mysql --with-gd --with-png-dir=/usr/local/libpng --with-jpeg-dir=/usr/local/jpeg --with-freetype-dir=/usr/local/freetype --with-xpm-dir=/usr/ --with-vpx-dir=/usr/local/libvpx/ --with-zlib-dir=/usr/local/zlib --with-t1lib=/usr/local/t1lib --with-iconv --enable-libxml --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-opcache --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --enable-session --with-mcrypt --with-curl --enable-ctype
+# make
+# make install
+# cp php.ini-production /usr/local/php/etc/php.ini
+# rm -f /etc/php.ini
+# ln -s /usr/local/php/etc/php.ini /etc/php.ini
+# cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
+# ln -s /usr/local/php/etc/php-fpm.conf /etc/php-fpm.conf
+编辑php配置文件，参照如下修改
+# vim /usr/local/php/etc/php-fpm.conf
+  user = www #设置php-fpm运行账号为www
+  group = www #设置php-fpm运行组为www
+  pid = run/php-fpm.pid #取消前面的分号
+设置 php-fpm开机启动
+# cp /usr/local/src/php-5.5.14/sapi/fpm/init.d.php-fpm /etc/rc.d/init.d/php-fpm
+# chmod +x /etc/rc.d/init.d/php-fpm
+# chkconfig php-fpm on
+   编辑PHP配置文件，修改以下内容
+# vim /usr/local/php/etc/php.ini
+   找到：disable_functions =
+
+   修改为：disable_functions = passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,ini_alter,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server,escapeshellcmd,dll,popen,disk_free_space,checkdnsrr,checkdnsrr,getservbyname,getservbyport,disk_total_space,posix_ctermid,posix_get_last_error,posix_getcwd, posix_getegid,posix_geteuid,posix_getgid, posix_getgrgid,posix_getgrnam,posix_getgroups,posix_getlogin,posix_getpgid,posix_getpgrp,posix_getpid, posix_getppid,posix_getpwnam,posix_getpwuid, posix_getrlimit, posix_getsid,posix_getuid,posix_isatty, posix_kill,posix_mkfifo,posix_setegid,posix_seteuid,posix_setgid, posix_setpgid,posix_setsid,posix_setuid,posix_strerror,posix_times,posix_ttyname,posix_uname
+--设置时区   
+找到：;date.timezone =
+修改为：date.timezone = PRC
+--禁止显示php版本的信息
+找到：expose_php = On
+修改为：expose_php = Off
+--支持php短标签
+找到：short_open_tag = Off
+修改为：short_open_tag = ON
+--php支持opcode缓存
+找到opcache.enable=0
+修改为opcache.enable=1
+--php支持opcode缓存
+找到：opcache.enable_cli=1
+修改为：opcache.enable_cli=0
+在最后一行添加,开启opcode缓存功能
+zend_extension=opcache.so
+</code></pre>"># cp -frp /usr/lib64/libXpm.so* /usr/lib/
+# wget
+# tar -zvxf php-5.5.14.tar.gz
+# php-5.5.14
+# export LD_LIBRARY_PATH=/usr/local/libgd/lib
+# ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-mysql-sock=/tmp/mysql.sock --with-pdo-mysql=/usr/local/mysql --with-gd --with-png-dir=/usr/local/libpng --with-jpeg-dir=/usr/local/jpeg --with-freetype-dir=/usr/local/freetype --with-xpm-dir=/usr/ --with-vpx-dir=/usr/local/libvpx/ --with-zlib-dir=/usr/local/zlib --with-t1lib=/usr/local/t1lib --with-iconv --enable-libxml --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-opcache --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --with-openssl --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --enable-session --with-mcrypt --with-curl --enable-ctype
+# make
+# make install
+# cp php.ini-production /usr/local/php/etc/php.ini
+# rm -f /etc/php.ini
+# ln -s /usr/local/php/etc/php.ini /etc/php.ini
+# cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
+# ln -s /usr/local/php/etc/php-fpm.conf /etc/php-fpm.conf
+编辑php配置文件，参照如下修改
+# vim /usr/local/php/etc/php-fpm.conf
+  user = www #设置php-fpm运行账号为www
+  group = www #设置php-fpm运行组为www
+  pid = run/php-fpm.pid #取消前面的分号
+设置 php-fpm开机启动
+# cp /usr/local/src/php-5.5.14/sapi/fpm/init.d.php-fpm /etc/rc.d/init.d/php-fpm
+# chmod +x /etc/rc.d/init.d/php-fpm
+# chkconfig php-fpm on
+   编辑PHP配置文件，修改以下内容
+# vim /usr/local/php/etc/php.ini
+   找到：disable_functions =
+
+   修改为：disable_functions = passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,ini_alter,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server,escapeshellcmd,dll,popen,disk_free_space,checkdnsrr,checkdnsrr,getservbyname,getservbyport,disk_total_space,posix_ctermid,posix_get_last_error,posix_getcwd, posix_getegid,posix_geteuid,posix_getgid, posix_getgrgid,posix_getgrnam,posix_getgroups,posix_getlogin,posix_getpgid,posix_getpgrp,posix_getpid, posix_getppid,posix_getpwnam,posix_getpwuid, posix_getrlimit, posix_getsid,posix_getuid,posix_isatty, posix_kill,posix_mkfifo,posix_setegid,posix_seteuid,posix_setgid, posix_setpgid,posix_setsid,posix_setuid,posix_strerror,posix_times,posix_ttyname,posix_uname
+--设置时区   
+找到：;date.timezone =
+修改为：date.timezone = PRC
+--禁止显示php版本的信息
+找到：expose_php = On
+修改为：expose_php = Off
+--支持php短标签
+找到：short_open_tag = Off
+修改为：short_open_tag = ON
+--php支持opcode缓存
+找到opcache.enable=0
+修改为opcache.enable=1
+--php支持opcode缓存
+找到：opcache.enable_cli=1
+修改为：opcache.enable_cli=0
+在最后一行添加,开启opcode缓存功能
+zend_extension=opcache.so
+</code></pre><h3 id="修改nginx配置文件以支持php"><a name="修改nginx配置文件以支持php" href="#修改nginx配置文件以支持php"></a>修改Nginx配置文件以支持PHP</h3><pre><code data-origin="<pre><code>1· 编辑Nginx配置文件
+# vim /usr/local/nginx/conf/nginx.conf
+user www www;#修改成与/usr/local/php/etc/php-fpm.conf中的user,group配置相同
+index index.html index.htm index.php;#添加index.php
+location ~ \.php$ {
+root html;
+fastcgi_pass 127.0.0.1:9000;
+fastcgi_index index.php;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+include fastcgi_params;
+}
+2· 重启nginx进程，并测试
+</code></pre>">1· 编辑Nginx配置文件
+# vim /usr/local/nginx/conf/nginx.conf
+user www www;#修改成与/usr/local/php/etc/php-fpm.conf中的user,group配置相同
+index index.html index.htm index.php;#添加index.php
+location ~ \.php$ {
+root html;
+fastcgi_pass 127.0.0.1:9000;
+fastcgi_index index.php;
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+include fastcgi_params;
+}
+2· 重启nginx进程，并测试
+</code></pre><h2 id="zabbix-安装"><a name="zabbix-安装" href="#zabbix-安装"></a>ZABBIX 安装</h2><h3 id="软件包准备"><a name="软件包准备" href="#软件包准备"></a>软件包准备</h3><pre><code data-origin="<pre><code># cd /usr/local/src
+# wget http://jaist.dl.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/3.2.6/zabbix-3.2.6.tar.gz
+# tar zvxf zabbix-3.2.6.tar.gz
+# cd zabbix-3.2.6/database/mysql
+</code></pre>"># cd /usr/local/src
+# wget http://jaist.dl.sourceforge.net/project/zabbix/ZABBIX%20Latest%20Stable/3.2.6/zabbix-3.2.6.tar.gz
+# tar zvxf zabbix-3.2.6.tar.gz
+# cd zabbix-3.2.6/database/mysql
+</code></pre><h3 id="初始化mysql数据库"><a name="初始化mysql数据库" href="#初始化mysql数据库"></a>初始化mysql数据库</h3><pre><code data-origin="<pre><code># mysql -u root -p123456
+&amp;gt; create database zabbix character set utf8;
+&amp;gt; grant all privileges on *.* to 'zabbix'@'localhost' identified by '123456';
+&amp;gt; grant all privileges on *.* to 'rozabbixot'@'192.168.10.171' identified by 'jbi123456';
+&amp;gt; flush privileges;
+&amp;gt; use zabbix
+&amp;gt; source /usr/local/src/zabbix-3.2.6/database/mysql/schema.sql;
+&amp;gt; source /usr/local/src/zabbix-3.2.6/database/mysql/images.sql;
+&amp;gt; source /usr/local/src/zabbix-2.2.6/database/mysql/data.sql;
+&amp;gt; exit
+# cd /usr/lib64/mysql
+# ln -s libmysqlclient.so.16.0.0 libmysqlclient.so
+# ln -s libmysqlclient_r.so.16.0.0 libmysqlclient_r.so
+</code></pre>"># mysql -u root -p123456
+&gt; create database zabbix character set utf8;
+&gt; grant all privileges on *.* to 'zabbix'@'localhost' identified by '123456';
+&gt; grant all privileges on *.* to 'rozabbixot'@'192.168.10.171' identified by 'jbi123456';
+&gt; flush privileges;
+&gt; use zabbix
+&gt; source /usr/local/src/zabbix-3.2.6/database/mysql/schema.sql;
+&gt; source /usr/local/src/zabbix-3.2.6/database/mysql/images.sql;
+&gt; source /usr/local/src/zabbix-2.2.6/database/mysql/data.sql;
+&gt; exit
+# cd /usr/lib64/mysql
+# ln -s libmysqlclient.so.16.0.0 libmysqlclient.so
+# ln -s libmysqlclient_r.so.16.0.0 libmysqlclient_r.so
+</code></pre><h3 id="zabbix-安装"><a name="zabbix-安装" href="#zabbix-安装"></a>zabbix 安装</h3><pre><code data-origin="<pre><code># cd /usr/local/src/zabbix-2.2.6
+# ./configure --prefix=/usr/local/zabbix --enable-server --enable-agent --with-net-snmp --with-libcurl --enable-proxy --with-mysql=/usr/bin/mysql_config
+# make
+# make install
+# ln -s /usr/local/zabbix/sbin/* /usr/local/sbin/
+# ln -s /usr/local/zabbix/bin/* /usr/local/bin/
+</code></pre>"># cd /usr/local/src/zabbix-2.2.6
+# ./configure --prefix=/usr/local/zabbix --enable-server --enable-agent --with-net-snmp --with-libcurl --enable-proxy --with-mysql=/usr/bin/mysql_config
+# make
+# make install
+# ln -s /usr/local/zabbix/sbin/* /usr/local/sbin/
+# ln -s /usr/local/zabbix/bin/* /usr/local/bin/
+</code></pre><h4 id="编辑/etc/services"><a name="编辑/etc/services" href="#编辑/etc/services"></a>编辑/etc/services</h4><pre><code data-origin="<pre><code># vim /etc/services
+  zabbix-agent 10050/tcp # Zabbix Agent
+  zabbix-agent 10050/udp # Zabbix Agent
+  zabbix-trapper 10051/tcp # Zabbix Trapper
+  zabbix-trapper 10051/udp # Zabbix Trapper
+</code></pre>"># vim /etc/services
+  zabbix-agent 10050/tcp # Zabbix Agent
+  zabbix-agent 10050/udp # Zabbix Agent
+  zabbix-trapper 10051/tcp # Zabbix Trapper
+  zabbix-trapper 10051/udp # Zabbix Trapper
+</code></pre><h4 id="修改zabbix配置文件"><a name="修改zabbix配置文件" href="#修改zabbix配置文件"></a>修改zabbix配置文件</h4><pre><code data-origin="<pre><code># vim /usr/local/zabbix/etc/zabbix_server.conf
+  DBName=zabbix #数据库名称
+  DBUser=zabbix #数据库用户名
+  DBPassword=123456 #数据库密码
+  ListenIP=127.0.0.1 #数据库ip地址
+  AlertScriptsPath=/usr/local/zabbix/share/zabbix/alertscripts #zabbix运行脚本存放目录
+
+# vim /usr/local/zabbix/etc/zabbix_agentd.conf
+  Include=/usr/local/zabbix/etc/zabbix_agentd.conf.d/
+  UnsafeUserParameters=1 #启用自定义key
+</code></pre>"># vim /usr/local/zabbix/etc/zabbix_server.conf
+  DBName=zabbix #数据库名称
+  DBUser=zabbix #数据库用户名
+  DBPassword=123456 #数据库密码
+  ListenIP=127.0.0.1 #数据库ip地址
+  AlertScriptsPath=/usr/local/zabbix/share/zabbix/alertscripts #zabbix运行脚本存放目录
+
+# vim /usr/local/zabbix/etc/zabbix_agentd.conf
+  Include=/usr/local/zabbix/etc/zabbix_agentd.conf.d/
+  UnsafeUserParameters=1 #启用自定义key
+</code></pre><h4 id="添加开机自启动"><a name="添加开机自启动" href="#添加开机自启动"></a>添加开机自启动</h4><pre><code data-origin="<pre><code># cp /usr/local/src/zabbix-2.2.6/misc/init.d/fedora/core/zabbix_server /etc/rc.d/init.d/zabbix_server
+# cp /usr/local/src/zabbix-2.2.6/misc/init.d/fedora/core/zabbix_agentd /etc/rc.d/init.d/zabbix_agentd
+# chmod +x /etc/rc.d/init.d/zabbix_server
+# chmod +x /etc/rc.d/init.d/zabbix_agentd
+# chkconfig zabbix_server on
+# chkconfig zabbix_agentd on
+# vim /etc/rc.d/init.d/zabbix_server
+  BASEDIR=/usr/local/zabbix/ #zabbix安装目录
+</code></pre>"># cp /usr/local/src/zabbix-2.2.6/misc/init.d/fedora/core/zabbix_server /etc/rc.d/init.d/zabbix_server
+# cp /usr/local/src/zabbix-2.2.6/misc/init.d/fedora/core/zabbix_agentd /etc/rc.d/init.d/zabbix_agentd
+# chmod +x /etc/rc.d/init.d/zabbix_server
+# chmod +x /etc/rc.d/init.d/zabbix_agentd
+# chkconfig zabbix_server on
+# chkconfig zabbix_agentd on
+# vim /etc/rc.d/init.d/zabbix_server
+  BASEDIR=/usr/local/zabbix/ #zabbix安装目录
+</code></pre><h4 id="配置web站点"><a name="配置web站点" href="#配置web站点"></a>配置web站点</h4><pre><code data-origin="<pre><code># cp -r /usr/local/src/zabbix-3.2.6/frontends/php /usr/local/nginx/html/zabbix
+# chown www.www -R /usr/local/nginx/html/zabbix
+# service zabbix_server start
+# service zabbix_agentd start
+</code></pre>"># cp -r /usr/local/src/zabbix-3.2.6/frontends/php /usr/local/nginx/html/zabbix
+# chown www.www -R /usr/local/nginx/html/zabbix
+# service zabbix_server start
+# service zabbix_agentd start
+</code></pre><h4 id="php参数调优"><a name="php参数调优" href="#php参数调优"></a>php参数调优</h4><pre><code data-origin="<pre><code># vim /etc/php.in
+  post_max_size =16M
+  max_execution_time =300
+  max_input_time =300
+# vim /usr/local/php/etc/php-fpm.conf
+  request_terminate_timeout = 300
+# service php-fpm reload
+</code></pre>"># vim /etc/php.in
+  post_max_size =16M
+  max_execution_time =300
+  max_input_time =300
+# vim /usr/local/php/etc/php-fpm.conf
+  request_terminate_timeout = 300
+# service php-fpm reload
+</code></pre><h4 id="安装web"><a name="安装web" href="#安装web"></a>安装web</h4><p>浏览器打开 <a href="http://192.168.10.174:8000/zabbix/setup.php">http://192.168.10.174:8000/zabbix/setup.php</a></p><ul>
+<li>进入欢迎页，点击下一步<br><img src="image/welcom.png" alt="welcom.png"></li><li>检查系统环境设置，必须全部都为ok，才能继续<br><img src="image/config_check.png" alt="config_check.png"></li><li>配置MySQL数据库信息<br><img src="image/mysql.png" alt="mysql.png"></li><li>设置服务器的详细信息<br><img src="image/detail.png" alt="detail.png"></li><li>展示如上所有设置<br><img src="image/all_config.png" alt="all_config.png"></li><li>至此web安装完成<br><img src="image/done.png" alt="done.png"></li></ul>
+
+<footer style="position:fixed; font-size:.8em; text-align:right; bottom:0px; margin-left:-25px; height:20px; width:100%;">generated by <a href="http://pad.haroopress.com" target="_blank">haroopad</a></footer>
+</body>
+</html>
