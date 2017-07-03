@@ -73,7 +73,7 @@
 
 ## 安装Nginx
 ### 安装pcre
-	# wget 
+	# wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.35.tar.gz
     # mkdir /usr/local/pcre
     # tar zxvf pcre-8.35.tar.gz
     # cd pcre-8.35
@@ -81,7 +81,7 @@
     # make
     # make install
 ### 安装openssl
-	# wget 
+	# wget http://www.openssl.org/source/openssl-1.0.1h.tar.gz
     # mkdir /usr/local/openssl
     # tar zxvf openssl-1.0.1h.tar.gz
     # cd openssl-1.0.1h
@@ -93,7 +93,7 @@
       export PATH=$PATH:/usr/local/openssl/bin
     # source /etc/profile
 ### 安装zlib
-	wget
+	# wget ftp://ftp.gnome.org/mirror/xbmc.org/build-deps/sources/zlib-1.2.8.tar.gz
     # mkdir /usr/local/zlib
     # tar zvxf zlib-1.2.8.tar.gz
     # cd zlib-1.2.8
@@ -113,14 +113,14 @@
 ## 安装PHP
 
 ### 安装yasm
-	# wget 
+	# wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
     # tar zxvf yasm-1.2.0.tar.gz
     # cd yasm-1.2.0
     # ./configure
     # make 
     # make install
 ### 安装libmcrypt
-	# wget 
+	# wget http://nchc.dl.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz
     # tar zxvf libmcrypt-2.5.8.tar.gz
     # cd libmcrypt-2.5.8
     # ./configure
@@ -128,7 +128,7 @@
     # make install
     
 ### 安装libvpx
-	# wget 
+	# wget https://webm.googlecode.com/files/libvpx-v1.3.0.tar.bz2
     # tar xvf libvpx-v1.3.0.tar.bz2
     # cd libvpx-v1.3.0
     # ./configure --prefix=/usr/local/libvpx --enable-shared --enable-vp9
@@ -136,7 +136,7 @@
     # make install
     
 ### 安装tiff
-	# wget
+	# wget ftp://ftp.usa.openbsd.org/pub/OpenBSD/distfiles/tiff-4.0.1.tar.gz
     # tar  zxvf tiff-4.0.3.tar.gz
     # cd tiff-4.0.3
     # ./configure --prefix=/usr/local/tiff --enable-shared
@@ -144,7 +144,7 @@
     # make install
     
 ### 安装libpng
-	# wget 
+	# wget http://prdownloads.sourceforge.net/libpng/libpng-1.6.12.tar.gz?download -O libpng-1.6.12.tar.gz
     # tar zxvf libpng-1.6.12.tar.gz
     # cd libpng-1.6.12
     # ./configure --prefix=/usr/local/libpng --enable-shared
@@ -152,7 +152,7 @@
     # make install
     
 ### 安装freetype
-	# wget
+	# http://ring.u-toyama.ac.jp/archives/graphics/freetype/freetype2/freetype-2.5.3.tar.gz
     # zxvf freetype-2.5.3.tar.gz
     # cd freetype-2.5.3
     # ./configure --prefix=/usr/local/freetype --enable-shared
@@ -160,7 +160,7 @@
     # make install
     
 ### 安装jpeg
-	# wget
+	# wget http://www.ijg.org/files/jpegsrc.v9a.tar.gz
     # tar zxvf jpegsrc.v9a.tar.gz
     # cd jpeg-9a
     # ./configure --prefix=/usr/local/jpeg --enable-shared
@@ -168,7 +168,7 @@
     # make install
 
 ### 安装libgd
-	# wget
+	# wget ftp://download:d0wnl0ad@116.62.173.114:/libgd-2.1.0.tar.gz
     # tar zxvf libgd-2.1.0.tar.gz
     # cd libgd-2.1.0
     # ./configure --prefix=/usr/local/libgd --enable-shared --with-jpeg=/usr/local/jpeg --with-png=/usr/local/libpng --with-freetype=/usr/local/freetype --with-fontconfig=/usr/local/freetype --with-xpm=/usr/ --with-tiff=/usr/local/tiff --with-vpx=/usr/local/libvpx
@@ -176,7 +176,7 @@
 	# make install
     
 ### 安装t1lib
-	# wget
+	# wget http://download.freenas.org/distfiles/t1lib-5.1.2.tar.gz
     # tar zxvf t1lib-5.1.2.tar.gz
     # cd t1lib-5.1.2
     # ./configure --prefix=/usr/local/t1lib --enable-shared
@@ -211,7 +211,7 @@
        找到：disable_functions =
 
 	   修改为：disable_functions = passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,ini_alter,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server,escapeshellcmd,dll,popen,disk_free_space,checkdnsrr,checkdnsrr,getservbyname,getservbyport,disk_total_space,posix_ctermid,posix_get_last_error,posix_getcwd, posix_getegid,posix_geteuid,posix_getgid, posix_getgrgid,posix_getgrnam,posix_getgroups,posix_getlogin,posix_getpgid,posix_getpgrp,posix_getpid, posix_getppid,posix_getpwnam,posix_getpwuid, posix_getrlimit, posix_getsid,posix_getuid,posix_isatty, posix_kill,posix_mkfifo,posix_setegid,posix_seteuid,posix_setgid, posix_setpgid,posix_setsid,posix_setuid,posix_strerror,posix_times,posix_ttyname,posix_uname
-    --设置时区   
+    --设置时区
     找到：;date.timezone =
     修改为：date.timezone = PRC
     --禁止显示php版本的信息
